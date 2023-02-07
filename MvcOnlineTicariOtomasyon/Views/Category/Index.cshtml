@@ -1,0 +1,44 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Classes
+@model List<Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mt-4 mb-4 text-center">Categories</h1>
+
+<div class="col mb-3">
+    <div class="float-start">
+        <a href="/Category/AddCategory" class="px-2 py-1 text-primary rounded-circle" style="background-color: #e9e9e9;" title="Add"><i class="fa fa-plus"></i></a>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead align="center" class="table-secondary">
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.CategoryName</td>
+                            <td>
+                                <ul class="p-0 m-0">
+                                    <li class="d-inline px-2"><a href="/Category/UpdateCategory/@x.ID" title="Update" class="text-success"><i class="fa fa-pen"></i></a></li>
+                                    <li class="d-inline px-2"><a href="/Category/DeleteCategory/@x.ID" title="Delete" class="text-danger"><i class="fa fa-trash"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

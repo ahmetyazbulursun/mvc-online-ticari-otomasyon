@@ -1,0 +1,47 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Classes
+@model List<SalesMoving>
+
+@{
+    ViewBag.Title = "PersonnelsBelongingSales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mt-4 mb-4 text-center">@ViewBag.Personnel's Sales</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead align="center" class="table-secondary">
+                    <tr>
+                        <th>Product</th>
+                        <th>Current</th>
+                        <th>Amount</th>
+                        <th>Piece</th>
+                        <th>Total Amount</th>
+                        <th>Date</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.Products.Name</td>
+                            <td>@x.Currents.Name @x.Currents.Surname</td>
+                            <td>@x.Amount</td>
+                            <td>@x.Piece</td>
+                            <td>@x.TotalAmount</td>
+                            <td>@(((DateTime)x.Date).ToString("dd'/'MM'/'yyyy"))</td>
+                            <td>
+                                <ul class="p-0 m-0">
+                                    <li class="d-inline px-2"><a href="/Department/UpdateDepartment/@x.ID" title="Print" class="text-primary"><i class="fa fa-print"></i></a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Category
+
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mt-4 mb-4 text-center">Add New Category</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form class="form-group" method="post">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <label class="form-label">Category Name:</label>
+                    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", @required = "required", @placeholder = "Category.." })
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-block" title="Add"><i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Products
+
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mt-4 mb-4 text-center">Update Product</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form class="form-group" method="post">
+
+            <div class="row mb-3">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="form-label">Product Name:</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @required = "required", @placeholder = "Name.." })
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="form-label">Category:</label>
+                    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.Categories, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="form-label">Brand:</label>
+                    @Html.TextBoxFor(x => x.Brand, new { @class = "form-control", @required = "required", @placeholder = "Brand.." })
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <label class="form-label">Image:</label>
+                    @Html.TextBoxFor(x => x.Image, new { @class = "form-control", @required = "required", @placeholder = "Image link.." })
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <label class="form-label">Stock:</label>
+                    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control", @required = "required", @placeholder = "Stock.." })
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <label class="form-label">Purchase Price:</label>
+                    @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control", @required = "required", @placeholder = "Purchase price.." })
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <label class="form-label">Sale Price:</label>
+                    @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control", @required = "required", @placeholder = "Sale price.." })
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success btn-block" title="Add"><i class="fa fa-pen"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

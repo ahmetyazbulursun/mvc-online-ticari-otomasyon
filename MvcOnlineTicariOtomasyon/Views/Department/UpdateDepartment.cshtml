@@ -1,0 +1,26 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Classes.Department
+
+@{
+    ViewBag.Title = "UpdateDepartment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="mt-4 mb-4 text-center">Update Department</h1>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form class="form-group" method="post">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <label class="form-label">Department Name:</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @required = "required", @placeholder = "Department.." })
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success btn-block" title="Add"><i class="fa fa-pen"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
